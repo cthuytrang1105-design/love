@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Em Yêu Anh 💗</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: white;
+      letter-spacing: 0.01em;
+
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 155, 194, 0.4), transparent 25%),
+        radial-gradient(circle at 85% 78%, rgba(177, 122, 255, 0.3), transparent 28%),
+        radial-gradient(circle at 50% 0%, rgba(255, 192, 220, 0.16), transparent 30%),
+        linear-gradient(
+          135deg,
+          #120918,
+          #20102b,
+          #341a42,
+          #1d0f2b
+        );
+
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255,255,255,.7) 1px,
+          transparent 1px
+        );
+
+      background-size: 52px 52px;
+      opacity: .06;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ==========================
+       INTRO
+    ========================== */
+
+    #intro {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #552160,
+          #21102c 55%,
+          #0d0713
+        );
+
+      transition: 1s;
+    }
+
+    #intro.hide {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.05);
+    }
+
+    .intro-content {
+      width: min(90%, 700px);
+      padding: 30px;
+    }
+
+    .intro-heart {
+      font-size: 80px;
+
+      animation: heartbeat 1.2s infinite;
+
+      filter:
+        drop-shadow(
+          0 0 25px rgba(255, 80, 150, .7)
+        );
+    }
+
+    @keyframes heartbeat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    .intro-content h1 {
+      margin-top: 20px;
+
+      font-size: clamp(
+        45px,
+        9vw,
+        85px
+      );
+
+      background:
+        linear-gradient(
+          90deg,
+          white,
+          #ff9dcc,
+          #c9a3ff
+        );
+
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .intro-content p {
+      color: #eadfec;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 600px;
+
+      margin:
+        20px auto
+        30px;
+    }
+
+    .main-btn {
+      border: none;
+      padding: 16px 30px;
+      border-radius: 999px;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff7bb8, #ff9fc9 28%, #cf8dff 100%);
+      box-shadow: 0 18px 42px rgba(255, 112, 182, 0.42), 0 0 24px rgba(255, 170, 220, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .main-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 24px 52px rgba(255, 112, 182, 0.52), 0 0 28px rgba(255, 170, 220, 0.22);
+      filter: brightness(1.08);
+    }
+
+    /* ==========================
+       NAV
+    ========================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 9, 28, 0.6);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .nav-inner {
+      max-width: 1150px;
+      margin: auto;
+      min-height: 68px;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 20px rgba(255, 155, 220, 0.42);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #e6d9eb;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff8dc0;
+    }
+
+    /* ==========================
+       COMMON
+    ========================== */
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 90px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: #ff91c3;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin-top: 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 12px auto 0;
+      max-width: 700px;
+      color: #d9c9e1;
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 70px rgba(20, 7, 28, 0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* ==========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 340px;
+      height: 340px;
+      background: rgba(255, 133, 191, 0.32);
+      top: 80px;
+      left: 12%;
+      box-shadow: 0 0 90px rgba(255, 133, 191, 0.2);
+    }
+
+    .hero::after {
+      width: 400px;
+      height: 400px;
+      background: rgba(179, 140, 255, 0.28);
+      bottom: 70px;
+      right: 12%;
+      box-shadow: 0 0 90px rgba(179, 140, 255, 0.18);
+    }
+
+    .hero-label {
+      color: #ffc3dd;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-shadow: 0 0 18px rgba(255, 158, 208, 0.34);
+    }
+
+    .hero h1 {
+      margin: 20px 0;
+      font-size: clamp(55px, 10vw, 105px);
+      line-height: 0.95;
+      background: linear-gradient(90deg, #fffafc, #ffbddb, #e1c0ff 70%, #fffafc);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(255, 170, 214, 0.2);
+    }
+
+    .hero p {
+      max-width: 750px;
+      color: #d9ccdf;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ghost-btn {
+      padding: 15px 28px;
+      border-radius: 999px;
+      cursor: pointer;
+      color: white;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .ghost-btn:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(255,255,255,0.06);
+    }
+
+    /* ==========================
+       LOVE COUNTER
+    ========================== */
+
+    .counter-box {
+      padding: 45px;
+      border-radius: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .counter-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 129, 190, 0.08), transparent 45%, rgba(170, 126, 255, 0.08));
+      pointer-events: none;
+    }
+
+    .counter-top {
+      font-size: 60px;
+      margin-bottom: 5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .counter-since {
+      color: #d9c8e2;
+      margin-bottom: 25px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .counter-item {
+      padding: 28px 12px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 14px 30px rgba(255, 114, 183, 0.08);
+    }
+
+    .counter-item strong {
+      display: block;
+      font-size: 42px;
+      color: #ff93c3;
+      margin-bottom: 6px;
+      text-shadow: 0 0 18px rgba(255, 140, 196, 0.25);
+    }
+
+    .counter-item span {
+      color: #d4c7dc;
+      font-size: 14px;
+    }
+
+    /* ==========================
+       TIMELINE
+    ========================== */
+
+    .timeline {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      gap: 40px;
+    }
+
+    .memory-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 30px;
+      overflow: hidden;
+      min-height: 360px;
+      transition: 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .memory-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 80px rgba(20,7,28,0.34), 0 0 26px rgba(255, 134, 196, 0.12);
+    }
+
+    .memory-card:nth-child(even)
+    .memory-image {
+      order: 2;
+    }
+
+    .memory-card:nth-child(even)
+    .memory-info {
+      order: 1;
+    }
+
+    .memory-image {
+      position: relative;
+      min-height: 350px;
+      background: linear-gradient(135deg, #7b3a83, #2d163b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .memory-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12,7,19,0.1), rgba(12,7,19,0.34));
+      pointer-events: none;
+    }
+
+    .memory-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      filter: saturate(1.12) contrast(1.05);
+    }
+
+    .image-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,.8);
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-placeholder div {
+      font-size: 60px;
+      margin-bottom: 12px;
+    }
+
+    .image-placeholder p {
+      font-size: 14px;
+      opacity: .7;
+    }
+
+    .memory-info {
+      padding: 45px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(18, 9, 28, 0.08);
+    }
+
+    .memory-date {
+      color: #ff91c5;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .memory-info h3 {
+      margin: 12px 0 15px;
+      font-size: 29px;
+      line-height: 1.2;
+    }
+
+    .memory-info p {
+      color: #d0c2d7;
+      line-height: 1.8;
+    }
+
+    .memory-number {
+      margin-top: 25px;
+      color: rgba(255,255,255,0.16);
+      font-size: 55px;
+      font-weight: bold;
+    }
+
+    /* ==========================
+       REASONS
+    ========================== */
+
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .reason {
+      min-height: 220px;
+      padding: 30px;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.35s ease;
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.12), 0 0 18px rgba(255, 146, 201, 0.08);
+    }
+
+    .reason:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 22px 50px rgba(246, 104, 181, 0.14), 0 0 22px rgba(255, 146, 201, 0.1);
+    }
+
+    .reason-icon {
+      font-size: 50px;
+    }
+
+    .reason-text {
+      display: none;
+      color: #eee6f1;
+      line-height: 1.8;
+    }
+
+    .reason.open
+    .reason-icon {
+      display: none;
+    }
+
+    .reason.open
+    .reason-text {
+      display: block;
+    }
+
+    /* ==========================
+       SECRET LETTERS
+    ========================== */
+
+    .letter-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+
+    .letter {
+      border-radius: 25px;
+      padding: 30px 18px;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.35s ease;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 18px rgba(255, 146, 201, 0.06);
+    }
+
+    .letter:hover {
+      transform: translateY(-7px);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 22px 50px rgba(255, 123, 186, 0.1), 0 0 18px rgba(255, 146, 201, 0.12);
+    }
+
+    .letter-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .letter h3 {
+      font-size: 17px;
+    }
+
+    /* ==========================
+       FINAL
+    ========================== */
+
+    .final-box {
+      max-width: 820px;
+      margin: auto;
+      text-align: center;
+      padding: 50px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.14);
+    }
+
+    .final-icon {
+      font-size: 70px;
+      filter: drop-shadow(0 0 20px rgba(255, 122, 185, 0.4));
+    }
+
+    .final-box h2 {
+      margin: 15px 0 25px;
+    }
+
+    #finalLetter {
+      display: none;
+      margin-top: 35px;
+      padding: 35px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      text-align: left;
+      color: #e8deec;
+      line-height: 2;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #finalLetter.show {
+      display: block;
+      animation: fadeUp .8s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+    /* ==========================
+       MODAL
+    ========================== */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+      z-index: 1000;
+
+      background:
+        rgba(5,2,10,.8);
+
+      backdrop-filter:
+        blur(15px);
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      width: min(550px,100%);
+      padding: 40px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(38, 22, 50, 0.96), rgba(17, 9, 24, 0.96));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .modal-content h2 {
+      color: #ff94c7;
+      margin-bottom: 18px;
+    }
+
+    .modal-content p {
+      line-height: 1.9;
+      color: #eadfec;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      border: none;
+      background: none;
+      color: white;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* ==========================
+       FLOATING HEART
+    ========================== */
+
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+
+      pointer-events: none;
+      z-index: 999;
+
+      animation:
+        floatHeart linear forwards;
+    }
+
+    @keyframes floatHeart {
+      to {
+        transform:
+          translateY(-115vh)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* ==========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding:
+        45px 20px;
+
+      text-align: center;
+      color: #b9a9c1;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+    /* ==========================
+       MOBILE
+    ========================== */
+
+    @media
+    (max-width: 850px) {
+
+      .memory-card {
+        grid-template-columns:
+          1fr;
+      }
+
+      .memory-card:nth-child(even)
+      .memory-image,
+
+      .memory-card:nth-child(even)
+      .memory-info {
+        order: initial;
+      }
+
+      .counter-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .reason-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .letter-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+    }
+
+    @media
+    (max-width: 600px) {
+
+      nav {
+        position: relative;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      section {
+        padding:
+          70px 16px;
+      }
+
+      .counter-box {
+        padding:
+          30px 15px;
+      }
+
+      .counter-item strong {
+        font-size: 32px;
+      }
+
+      .memory-info {
+        padding:
+          32px 25px;
+      }
+
+      .memory-image {
+        min-height: 300px;
+      }
+
+      .reason-grid,
+      .letter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .final-box {
+        padding:
+          35px 20px;
+      }
+
+      #finalLetter {
+        padding:
+          25px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- ==========================
+     INTRO
+========================== -->
+
+<div id="intro">
+
+  <div class="intro-content">
+
+    <div class="intro-heart">
+      💗
+    </div>
+
+    <h1>
+      Gửi ăm chã húi
+    </h1>
+
+    <p>
+      Yêu thì mở quà, không yêu xin đừng bấm
+    </p>
+
+    <button
+      class="main-btn"
+      onclick="startWebsite()"
+    >
+      Yêu lắmm💌
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ==========================
+     MENU
+========================== -->
+
+<nav>
+
+  <div class="nav-inner">
+
+    <div class="logo">
+      💗 Hiếu Trang
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- ==========================
+     HERO
+========================== -->
+
+<section
+  class="hero"
+  id="home"
+>
+
+  <div class="hero-label">
+    Our little love story
+  </div>
+
+  <h1>
+    Em yêu anh nhiều lắm
+  </h1>
+
+  <p>
+  </p>
+
+
+  <div class="hero-buttons">
+
+    <a href="#timeline">
+
+      <button
+        class="main-btn"
+      >
+        Xem câu chuyện của chúng mình
+      </button>
+
+    </a>
+
+
+    <button
+      class="ghost-btn"
+      onclick="heartBurst()"
+    >
+      Gửi anh một trái tim 💗
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     LOVE COUNTER
+========================== -->
+
+<section id="days">
+
+  <div
+    class="counter-box glass"
+  >
+
+    <div class="counter-top">
+      💕
+    </div>
+
+    <div class="counter-since">
+
+      26 / 05 / 2024
+
+      <br>
+
+      Ngày chúng mình chính thức
+      trở thành người yêu của nhau.
+
+    </div>
+
+
+    <div class="counter-grid">
+
+      <div class="counter-item">
+
+        <strong id="dayNumber">
+          861
+        </strong>
+
+        <span>
+          Ngày
+        </span>
+
+      </div>
+
+
+      <div class="counter-item">
+
+        <strong id="hourNumber">
+          0
+        </strong>
+
+        <span>
+          Giờ
+        </span>
+
+      </div>
+
+
+      <div class="counter-item">
+
+        <strong id="minuteNumber">
+          0
+        </strong>
+
+        <span>
+          Phút
+        </span>
+
+      </div>
+
+
+      <div class="counter-item">
+
+        <strong id="secondNumber">
+          0
+        </strong>
+
+        <span>
+          Giây
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     TIMELINE
+========================== -->
+
+<section id="timeline">
+
+  <div class="section-title">
+
+    <span>
+      Memories
+    </span>
+
+    <h2>
+      Câu chuyện của chúng mình
+    </h2>
+
+    <p>
+
+      Có những ngày tưởng như rất bình thường,
+
+      nhưng vì có anh xuất hiện
+      nên chúng trở thành những ngày
+      em sẽ nhớ rất lâu.
+
+    </p>
+
+  </div>
+
+
+  <div class="timeline">
+
+
+    <!-- ==========================
+         EVENT 1
+         BẮT ĐẦU NÓI CHUYỆN
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/lannoichuyendautien.jpg"
+          alt="Ngày bắt đầu nói chuyện"
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          24 / 07 / 2023
+        </div>
+
+        <h3>
+          Ngày tụi mình bắt đầu nói chuyện
+        </h3>
+
+        <p>
+
+          Từ việc đá note nhau, chàng trai ấy đã dám rep note tôi kkk
+
+          <br><br>
+
+          Thật không ngờ rằng
+          người đá note với em ngày hôm đó
+
+          sau này lại trở thành
+          một trong những người quan trọng nhất
+          với em.
+
+        </p>
+
+        <div class="memory-number">
+          01
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         EVENT 2
+         BIẾN CỐ
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/landunglai.jpg"
+          alt="Khoảng thời gian chúng mình dừng lại"
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          MỘT KHOẢNG THỜI GIAN SAU...
+        </div>
+
+        <h3>
+          Rồi có một lúc cả hai đã dừng lại...
+        </h3>
+
+        <p>
+
+          Chuyện của tụi mình cũng đâu có thuận lợi từ đầu đến cuối.
+
+          <br><br>
+
+          Đã có một khoảng thời gian tụi mình phải chấp nhận việc làm bạn với nhau vì nghĩ chuyện mình là không thể. 
+
+          <br><br>
+
+          Lúc đó cũng buồn buồn đó,  chắc cả hai đều nghĩ
+          câu chuyện của tụi mình đến đây là hết rồi nhỉ?
+
+        </p>
+
+        <div class="memory-number">
+          02
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         EVENT 3
+         NÓI CHUYỆN LẠI
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/saudolainoichuyenlai.jpg"
+          alt="Ngày chúng mình nói chuyện lại"
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          RỒI MỘT NGÀY...
+        </div>
+
+        <h3>
+          Hai đứa lại nói chuyện với nhau
+        </h3>
+
+        <p>
+
+          Cứ tưởng chuyện mình dấu chấm thật rồi,
+
+          vậy mà bằng một cách nào đó
+          tụi mình lại bắt đầu nói chuyện với nhau.
+
+          <br><br>
+
+          Lại rep nhau,
+          lại nói những câu chuyện linh tinh,
+
+          rồi chẳng biết từ lúc nào
+          khoảng cách giữa hai đứa lại gần hơn.
+
+          <br><br>
+
+          Và chắc lúc ấy anh cũng không nghĩ rằng
+          lần này anh sẽ được yêu một người đáng yêu như em đâu nhỉ hihi
+          . 💗
+
+        </p>
+
+        <div class="memory-number">
+          03
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         EVENT 4
+         BUỔI HẸN ĐẦU TIÊN
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/landichoidautien.jpg"
+          alt="Buổi hẹn đầu tiên"
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          29 / 12 / 2023
+        </div>
+
+        <h3>
+          Buổi hẹn đầu tiên của chúng mình
+        </h3>
+
+        <p>
+
+          Đang cách ly mối quan hệ mà rep locket rủ đi chơi kiểu bạn bè là sao ?
+
+        </p>
+
+        <div class="memory-number">
+          04
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         EVENT 5
+         CHÍNH THỨC YÊU NHAU
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/anhbatdauyeunhau.jpg"
+          alt="Ngày yêu nhau"
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          26 / 05 / 2024
+        </div>
+
+        <h3>
+          Ngày anh chính thức có người yêu
+        </h3>
+
+        <p>
+
+          Sau gần một năm mập mờ mới cho cái danh phận.
+
+          Thôi thì cũng được, cũng yêu đấy.
+
+        </p>
+
+        <div class="memory-number">
+          05
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         FUTURE
+    ========================== -->
+
+    <div class="memory-card glass">
+
+      <div class="memory-image">
+
+        <img
+          src="../images/vacontiepnua.jpg"
+          alt="Còn tiếp..."
+        >
+
+      </div>
+
+
+      <div class="memory-info">
+
+        <div class="memory-date">
+          FUTURE
+        </div>
+
+        <h3>
+          Và tụi mình sẽ còn yêu nhau nhiều nhiều nữa...
+        </h3>
+
+        <p>
+
+          Để bù lại việc mập mờ 1 năm mới tỏ tình thì phải yêu em gấp 100 lần số năm đã mập mờ nhớ chưa ????
+
+        </p>
+
+        <div class="memory-number">
+          ∞
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     WHY HIM
+========================== -->
+
+<section id="reasons">
+
+  <div class="section-title">
+
+    <span>
+      Why You?
+    </span>
+
+    <h2>
+      Vì sao lại là anh ?
+    </h2>
+
+    <p>
+      Bấm vào từng ô nhé.
+    </p>
+
+  </div>
+
+
+  <div class="reason-grid">
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        💗
+      </div>
+
+      <div class="reason-text">
+
+        Vì anh đã xuất hiện
+        và khiến những ngày rất bình thường
+        của em trở nên đặc biệt hơn.
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        🌷
+      </div>
+
+      <div class="reason-text">
+
+        Vì em thích cảm giác
+        có một người để kể đủ thứ chuyện
+        chẳng đầu chẳng cuối mỗi ngày.
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        🥹
+      </div>
+
+      <div class="reason-text">
+
+        Vì cho dù đôi lúc
+        chúng mình giận nhau,
+
+        em vẫn luôn muốn
+
+        người ở cạnh em cuối cùng
+
+        là anh.
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        🫶
+      </div>
+
+      <div class="reason-text">
+
+        Vì bên anh,
+
+        em được vui,
+
+        được dỗi,
+
+        được trẻ con
+
+        và được là chính mình.
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        💌
+      </div>
+
+      <div class="reason-text">
+
+        Vì em thích được quan tâm anh
+
+        và cũng thích cảm giác
+
+        mình được anh quan tâm.
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="reason glass"
+      onclick="toggleReason(this)"
+    >
+
+      <div class="reason-icon">
+        ∞
+      </div>
+
+      <div class="reason-text">
+
+        Và còn rất nhiều lý do khác, chưa thích bật mí hihi.
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     SECRET LETTERS
+========================== -->
+
+<section id="letters">
+
+  <div class="section-title">
+
+    <span>
+      Secret Letters
+    </span>
+
+    <h2>
+      Một vài bức thư dành cho anh
+    </h2>
+
+    <p>
+      Mỗi lúc khác nhau,
+      hãy mở một bức khác nhau nhé.
+    </p>
+
+  </div>
+
+
+  <div class="letter-grid">
+
+
+    <div
+      class="letter glass"
+
+      onclick="
+        openLetter(
+          'Khi anh mệt 🥺',
+          'Nếu ngày hôm nay của anh rất mệt thì anh hãy nghỉ một chút nhé. Vì anh đã làm rất tốt rồi và em mong anh nhớ rằng vẫn luôn có em ở đây quan tâm anh rất nhiều. 💗'
+        )
+      "
+    >
+
+      <div class="letter-icon">
+        🥺
+      </div>
+
+      <h3>
+        Mở khi anh mệt
+      </h3>
+
+    </div>
+
+
+
+    <div
+      class="letter glass"
+
+      onclick="
+        openLetter(
+          'Khi anh nhớ em 💕',
+          'Nếu anh đang nhớ em thì có nghĩa lúc đó em cũng đang nhớ anh nhìu lắm. Em sẽ cố đến bên anh nhanh nhất có thể hihi 💗'
+        )
+      "
+    >
+
+      <div class="letter-icon">
+        💕
+      </div>
+
+      <h3>
+        Mở khi anh nhớ em
+      </h3>
+
+    </div>
+
+
+
+    <div
+      class="letter glass"
+
+      onclick="
+        openLetter(
+          'Khi chúng mình giận nhau 😭',
+          'Có thể lúc giận nhau hai đứa sẽ nói những điều không vui. Nhưng em mong dù có chuyện gì, chúng mình cũng sẽ cùng nhau trải qua và yêu nhau thật nhiều hơn nữa. Đừng giận em lâu nhé, giận lâu là thành Shrek đấy ( đã béo còn màu xanh)🥹'
+        )
+      "
+    >
+
+      <div class="letter-icon">
+        😭
+      </div>
+
+      <h3>
+        Mở khi giận em
+      </h3>
+
+    </div>
+
+
+
+    <div
+      class="letter glass"
+
+      onclick="
+        openLetter(
+          'Khi anh thấy buồn 🌙',
+          ' Hãy gọi cho tui, vợ muốn biết mọi nỗi buồn của ăm chã 🌙💗'
+        )
+      "
+    >
+
+      <div class="letter-icon">
+        🌙
+      </div>
+
+      <h3>
+        Mở khi anh thấy buồn
+      </h3>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     FINAL LETTER
+========================== -->
+
+<section>
+
+  <div class="section-title">
+
+    <span>
+      One More Thing
+    </span>
+
+    <h2>
+      Và còn một điều cuối cùng...
+    </h2>
+
+  </div>
+
+
+  <div
+    class="final-box glass"
+  >
+
+    <div class="final-icon">
+      💌
+    </div>
+
+    <h2>
+      Có một lá thư dành cho anh
+    </h2>
+
+
+    <button
+      class="main-btn"
+      onclick="openFinalLetter()"
+    >
+      Mở bức thư
+    </button>
+
+
+    <div id="finalLetter">
+
+      Gửi anh yêu của em,
+
+      <br><br>
+
+      Từ những ngày đầu trò chuyện
+
+      em chưa từng nghĩ rằng
+
+      
+
+      sau này anh lại có thể trở thành
+
+      một phần quan trọng đến vậy
+
+      trong cuộc sống của em.
+
+      <br><br>
+
+      Mình đã cùng nhau trải qua những ngày vui, ngày buồn và cả những ngày siêu buồn.
+
+      Em biết rằng để đi được tới ngày hôm nay chưa bao giờ là dễ với cả anh và em.
+
+      Em cũng biết rằng bọn mình cũng đã không còn những tình yêu của những ngày đầu nữa, nhưng em mong rằng chúng mình sẽ luôn cố gắng cùng nhau vượt qua những suy nghĩ xấu xa của bản thân ấy.
+
+      <br><br>
+
+      Em không chắc
+
+      tương lai của mình sẽ như thế nào,
+
+      nhưng em mong khi chúng mình
+
+      nhìn lại những gì mình đã trải qua cùng nhau thì càng thấy yêu nhau trận trọng nhau nhiều hơn nữa.
+
+      <br><br>
+
+      Em không muốn con số những ngày chúng mình đã yêu nhau một ngày nào đó phải dừng lại, vậy nên anh hãy luôn cùng em cố gắng thật nhiều nhé.
+
+      <br><br>
+
+      <b
+        style="
+          color:#ff95c7;
+          font-size:20px;
+        "
+      >
+
+        Em yêu anh. 💗
+
+      </b>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  Made with 💗 by your girl.
+
+</footer>
+
+
+<!-- ==========================
+     LETTER MODAL
+========================== -->
+
+<div
+  class="modal"
+  id="letterModal"
+>
+
+  <div
+    class="modal-content glass"
+  >
+
+    <button
+      class="close-btn"
+      onclick="closeLetter()"
+    >
+      ✕
+    </button>
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalText"></p>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  /* ==========================
+     NGÀY YÊU CHÍNH THỨC
+  ========================== */
+
+  const loveStartDate =
+    new Date(
+      "2024-05-26T00:00:00"
+    );
+
+
+  /* ==========================
+     INTRO
+  ========================== */
+
+  function startWebsite() {
+
+    document
+      .getElementById(
+        "intro"
+      )
+      .classList
+      .add(
+        "hide"
+      );
+
+    heartBurst();
+
+  }
+
+
+  /* ==========================
+     LOVE COUNTER
+  ========================== */
+
+  function updateCounter() {
+
+    const now =
+      new Date();
+
+    let difference =
+      now -
+      loveStartDate;
+
+    if (
+      difference < 0
+    ) {
+
+      difference = 0;
+
+    }
+
+    const days =
+      Math.floor(
+        difference /
+        86400000
+      );
+
+    const hours =
+      Math.floor(
+        difference /
+        3600000
+      );
+
+    const minutes =
+      Math.floor(
+        difference /
+        60000
+      );
+
+    const seconds =
+      Math.floor(
+        difference /
+        1000
+      );
+
+    document
+      .getElementById(
+        "dayNumber"
+      )
+      .textContent =
+      days;
+
+    document
+      .getElementById(
+        "hourNumber"
+      )
+      .textContent =
+      hours;
+
+    document
+      .getElementById(
+        "minuteNumber"
+      )
+      .textContent =
+      minutes;
+
+    document
+      .getElementById(
+        "secondNumber"
+      )
+      .textContent =
+      seconds;
+
+  }
+
+  updateCounter();
+
+  setInterval(
+    updateCounter,
+    1000
+  );
+
+
+  /* ==========================
+     REASONS
+  ========================== */
+
+  function toggleReason(
+    element
+  ) {
+
+    element
+      .classList
+      .toggle(
+        "open"
+      );
+
+  }
+
+
+  /* ==========================
+     LETTER
+  ========================== */
+
+  function openLetter(
+    title,
+    text
+  ) {
+
+    document
+      .getElementById(
+        "modalTitle"
+      )
+      .textContent =
+      title;
+
+    document
+      .getElementById(
+        "modalText"
+      )
+      .textContent =
+      text;
+
+    document
+      .getElementById(
+        "letterModal"
+      )
+      .classList
+      .add(
+        "show"
+      );
+
+    heartBurst();
+
+  }
+
+
+  function closeLetter() {
+
+    document
+      .getElementById(
+        "letterModal"
+      )
+      .classList
+      .remove(
+        "show"
+      );
+
+  }
+
+
+  document
+    .getElementById(
+      "letterModal"
+    )
+    .addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          event.target === this
+        ) {
+
+          closeLetter();
+
+        }
+
+      }
+    );
+
+
+  /* ==========================
+     FINAL LETTER
+  ========================== */
+
+  function openFinalLetter() {
+
+    document
+      .getElementById(
+        "finalLetter"
+      )
+      .classList
+      .toggle(
+        "show"
+      );
+
+    heartBurst();
+
+  }
+
+
+  /* ==========================
+     HEART EFFECT
+  ========================== */
+
+  function createHeart() {
+
+    const heart =
+      document
+      .createElement(
+        "div"
+      );
+
+    heart
+      .classList
+      .add(
+        "floating-heart"
+      );
+
+    const iconList = [
+
+      "💗",
+      "💕",
+      "💖",
+      "💞",
+      "🌷",
+      "✨"
+
+    ];
+
+    heart.textContent =
+      iconList[
+        Math.floor(
+          Math.random() *
+          iconList.length
+        )
+      ];
+
+    heart.style.left =
+      Math.random() *
+      100 +
+      "vw";
+
+    heart.style.fontSize =
+      (
+        Math.random() *
+        20 +
+        17
+      )
+      +
+      "px";
+
+    heart.style.animationDuration =
+      (
+        Math.random() *
+        3 +
+        4
+      )
+      +
+      "s";
+
+    document
+      .body
+      .appendChild(
+        heart
+      );
+
+    setTimeout(
+      function() {
+
+        heart.remove();
+
+      },
+      7500
+    );
+
+  }
+
+
+  function heartBurst() {
+
+    for (
+      let i = 0;
+      i < 28;
+      i++
+    ) {
+
+      setTimeout(
+        createHeart,
+        i * 55
+      );
+
+    }
+
+  }
+
+
+  setInterval(
+    createHeart,
+    1800
+  );
+
+</script>
+
+</body>
+</html>
